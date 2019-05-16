@@ -1,0 +1,13 @@
+ let dictSectionWiseData = NSMutableDictionary()
+ var detailModuleData = [[String:AnyObject]]()
+ var singleModuleListDetails = [String:AnyObject]()
+
+  if let val = objDetails["id"] as? String{
+        singleModuleListDetails["id"] = val as AnyObject
+  } else{
+      singleModuleListDetails["id"] = "" as AnyObject
+  }
+  self.detailModuleData.append(singleModuleListDetails)
+                                
+  self.dictSectionWiseData.setValue(self.detailModuleData, forKey: singleModuleList.moduleName!)
+  UserDefaults.standard.set(self.dictSectionWiseData, forKey: "detailSectionsModule")
